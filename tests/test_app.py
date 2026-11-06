@@ -374,3 +374,22 @@ def test_startup_refuses_without_a_key(monkeypatch):
     monkeypatch.delenv("STRAIKER_API_KEY", raising=False)
     with pytest.raises(RuntimeError, match="STRAIKER_API_KEY"):
         app_module.api_key()
+
+
+@pytest.mark.parametrize("body, user", [
+    ({"model": "m", "input": "hi", "safety_identifier": "u-7f3a"}, "u-7f3a"),
+    ({"model": "m", "input": "hi", "user": "u-7f3a"}, "u-7f3a"),
+    ({"model": "m", "metadata": {"user_id": "8d1c0a6e"}, "messages": [{"role": "user", "content": "hi"}]}, "8d1c0a6e"),
+])
+def test_end_user_from_fields_unity_gateway_accepts(make_client, body, user):
+    client, rec = make_client(ALLOW)
+    api = "openai/v1/responses" if "input" in body else "anthropic/v1/messages"
+    post(client, envelope(data=body, api_type=api))
+    assert rec.payload()["user_name"] == user
+
+
+def test_claude_code_device_metadata_is_not_a_user(make_client):
+    client, rec = make_client(ALLOW)
+    post(client, envelope(data=captured("claude_code_sdk_cli_first"), api_type="anthropic/v1/messages"))
+    assert "user_name" not in rec.payload()
+

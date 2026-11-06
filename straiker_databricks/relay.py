@@ -395,8 +395,12 @@ def service_label(target: str) -> str:
 
 
 def user_of(event: Event) -> str | None:
-    """The end user, from what the body states. Databricks sends no identity, and Claude Code's
-    `metadata.user_id` is a device id, so it is never read as a user."""
+    """The end user, from what the body states, because Databricks sends no caller identity.
+
+    What Unity Gateway accepts (measured 2026-11-05): OpenAI Responses `user` and
+    `safety_identifier`; Anthropic Messages `metadata.user_id`, but only a UUID or hash (an email
+    is rejected); nothing on Chat Completions. Claude Code's `metadata.user_id` is a JSON object
+    naming a device, not a person, so it is never read as a user."""
     if event.settings.user:
         return event.settings.user
     body = event.request
@@ -404,6 +408,10 @@ def user_of(event: Event) -> str | None:
         value = body.get(key)
         if isinstance(value, str) and value.strip():
             return value.strip()
+    meta = body.get("metadata")
+    stated = meta.get("user_id") if isinstance(meta, Mapping) else None
+    if isinstance(stated, str) and stated.strip() and not stated.lstrip().startswith("{"):
+        return stated.strip()
     return None
 
 
