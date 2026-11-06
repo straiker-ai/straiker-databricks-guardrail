@@ -83,7 +83,7 @@ The policy's **Policy configuration** field takes a JSON object. All keys are op
 
 ## Operate
 
-- **Logs**: **Compute > Apps > straiker-guardrail > Logs**. One JSON line per call with the
+- **Logs**: **Apps > straiker-guardrail > Logs**. One JSON line per call with the
   decision, agent, session and latency. Content and keys are never logged.
 - **Rotate the key**: `databricks secrets put-secret straiker gateway-key …`, then
   `databricks bundle run straiker_guardrail`.
