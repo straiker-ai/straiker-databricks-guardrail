@@ -1,0 +1,47 @@
+{
+ "captured": "2026-11-05 via tools/record_proxy.py",
+ "provider_path": "/v1/messages",
+ "headers": {
+  "user-agent": "opencode/1.17.11 ai-sdk/provider-utils/4.0.27 runtime/bun/1.3.14",
+  "x-session-id": "ses_e51de2422ffe7KvXS69MfFut6b"
+ },
+ "body": {
+  "model": "claude-haiku-4-5-20251001",
+  "max_tokens": 48000,
+  "thinking": {
+   "type": "enabled",
+   "budget_tokens": 16000
+  },
+  "system": [
+   {
+    "type": "text",
+    "text": "You are a title generator. You output ONLY a thread title. Nothing else.\n\n<task>\nGenerate a brief title that would help the user find this conversation later.\n\nFollow all rules in <rules>\nUse the <exa\u2026[scrubbed]",
+    "cache_control": {
+     "type": "ephemeral"
+    }
+   }
+  ],
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "Generate a title for this conversation:\n",
+      "cache_control": {
+       "type": "ephemeral"
+      }
+     },
+     {
+      "type": "text",
+      "text": "\"Run the shell command: cat notes.txt. Then reply with the file content only.\"",
+      "cache_control": {
+       "type": "ephemeral"
+      }
+     }
+    ]
+   }
+  ],
+  "stream": true
+ }
+}

@@ -1,0 +1,124 @@
+{
+ "captured": "2026-11-05 via tools/record_proxy.py",
+ "provider_path": "/v1/messages",
+ "headers": {
+  "user-agent": "claude-cli/2.1.318 (external, sdk-cli)",
+  "x-app": "cli",
+  "x-claude-code-session-id": "26006b3e-3b3f-4e0d-8e37-e13e91dd20ef"
+ },
+ "body": {
+  "model": "claude-haiku-5-5",
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "[scrubbed 10893 chars]"
+     },
+     {
+      "type": "text",
+      "text": "[scrubbed 581 chars]"
+     },
+     {
+      "type": "text",
+      "text": "Use the Bash tool to run: cat notes.txt. Then reply with the file content only."
+     }
+    ]
+   },
+   {
+    "role": "system",
+    "content": [
+     {
+      "type": "text",
+      "text": "# Environment\nYou have been invoked in the following environment: \n - Primary working directory: /work\u2026[scrubbed]",
+      "cache_control": {
+       "type": "ephemeral"
+      }
+     }
+    ],
+    "output_config": {
+     "effort": "medium"
+    }
+   }
+  ],
+  "system": [
+   {
+    "type": "text",
+    "text": "x-anthropic-billing-header: cc_version=2.1.318.c86; cc_entrypoint=sdk-cli;"
+   },
+   {
+    "type": "text",
+    "text": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+    "cache_control": {
+     "type": "ephemeral"
+    }
+   },
+   {
+    "type": "text",
+    "text": "\nYou are an agent working with the user toward their goals, using your own judgment along the way.\n\nIMPORTANT: Assist with authorized security testing, defensive security, CTF challenges, and educatio\u2026[scrubbed]",
+    "cache_control": {
+     "type": "ephemeral"
+    }
+   }
+  ],
+  "tools": [
+   {
+    "name": "Agent"
+   },
+   {
+    "name": "Bash"
+   },
+   {
+    "name": "Edit"
+   },
+   {
+    "name": "ListAgents"
+   },
+   {
+    "name": "Read"
+   },
+   {
+    "name": "ReportFindings"
+   },
+   {
+    "name": "ScheduleWakeup"
+   },
+   {
+    "name": "Skill"
+   },
+   {
+    "name": "ToolSearch"
+   },
+   {
+    "name": "Workflow"
+   },
+   {
+    "name": "DeferredToolPlaceholder"
+   },
+   {
+    "name": "Write"
+   }
+  ],
+  "metadata": {
+   "user_id": "{\"device_id\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"account_uuid\":\"\",\"session_id\":\"26006b3e-3b3f-4e0d-8e37-e13e91dd20ef\"}"
+  },
+  "max_tokens": 128000,
+  "thinking": {
+   "type": "adaptive",
+   "display": "omitted"
+  },
+  "context_management": {
+   "edits": [
+    {
+     "type": "clear_thinking_20251015",
+     "keep": "all"
+    }
+   ]
+  },
+  "output_config": {
+   "effort": "medium"
+  },
+  "stream": true
+ }
+}

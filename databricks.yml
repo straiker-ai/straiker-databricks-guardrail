@@ -1,0 +1,47 @@
+# Deploys the Straiker guardrail as a Databricks App in the workspace it protects.
+#
+#   databricks bundle deploy --var caller_service_principal=<application id>
+#   databricks bundle run straiker_guardrail
+#
+# Prerequisites: the secret <secret_scope>/<secret_key> holds the Straiker Custom Gateway key, and
+# the caller service principal exists. Unity Gateway calls the app as that principal; it is the
+# only principal granted CAN USE, so nothing else can reach the policy endpoint.
+bundle:
+  name: straiker-guardrail
+
+variables:
+  caller_service_principal:
+    description: Application ID of the service principal the Unity Gateway connection authenticates as
+  secret_scope:
+    description: Secret scope that holds the Straiker key
+    default: straiker
+  secret_key:
+    description: Secret key that holds the Straiker key
+    default: gateway-key
+
+sync:
+  exclude:
+    - tests
+    - tools
+    - docs
+
+resources:
+  apps:
+    straiker_guardrail:
+      name: straiker-guardrail
+      description: Straiker guardrail for Unity Gateway external service policies
+      source_code_path: .
+      resources:
+        - name: straiker-key
+          description: Straiker Custom Gateway key
+          secret:
+            scope: ${var.secret_scope}
+            key: ${var.secret_key}
+            permission: READ
+      permissions:
+        - service_principal_name: ${var.caller_service_principal}
+          level: CAN_USE
+
+targets:
+  default:
+    default: true

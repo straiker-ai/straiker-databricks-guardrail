@@ -1,0 +1,102 @@
+{
+ "captured": "2026-11-05 via tools/record_proxy.py",
+ "provider_path": "/v1/responses",
+ "headers": {
+  "user-agent": "opencode/1.17.11 (darwin 24.6.0; arm64) ai-sdk/provider-utils/4.0.23 runtime/bun/1.3.14",
+  "originator": "opencode",
+  "session-id": "ses_e51de4669ffefpyi88e5321Z16",
+  "x-session-id": "ses_e51de4669ffefpyi88e5321Z16"
+ },
+ "body": {
+  "model": "gpt-5-mini",
+  "input": [
+   {
+    "role": "developer",
+    "content": "You are OpenCode, You and the user share the same workspace and collaborate to achieve the user's goals.\n\nYou are a deeply pragmatic, effective software engineer. You take engineering quality seriousl\u2026[scrubbed]"
+   },
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "input_text",
+      "text": "\"Run the shell command: cat notes.txt. Then reply with the file content only.\""
+     }
+    ]
+   },
+   {
+    "type": "reasoning",
+    "encrypted_content": "[scrubbed]",
+    "summary": []
+   },
+   {
+    "role": "assistant",
+    "content": [
+     {
+      "type": "output_text",
+      "text": "[scrubbed 31 chars]"
+     }
+    ]
+   },
+   {
+    "type": "function_call",
+    "call_id": "call_DCkXd597PvuAX0ADDoxc7SIY",
+    "name": "read",
+    "arguments": "[scrubbed 54 chars]"
+   },
+   {
+    "type": "function_call_output",
+    "call_id": "call_DCkXd597PvuAX0ADDoxc7SIY",
+    "output": "[scrubbed 107 chars]"
+   }
+  ],
+  "store": false,
+  "include": [
+   "reasoning.encrypted_content"
+  ],
+  "prompt_cache_key": "ses_e51de4669ffefpyi88e5321Z16",
+  "reasoning": {
+   "effort": "medium",
+   "summary": "auto"
+  },
+  "tools": [
+   {
+    "type": "function",
+    "name": "apply_patch"
+   },
+   {
+    "type": "function",
+    "name": "bash"
+   },
+   {
+    "type": "function",
+    "name": "glob"
+   },
+   {
+    "type": "function",
+    "name": "grep"
+   },
+   {
+    "type": "function",
+    "name": "read"
+   },
+   {
+    "type": "function",
+    "name": "skill"
+   },
+   {
+    "type": "function",
+    "name": "task"
+   },
+   {
+    "type": "function",
+    "name": "todowrite"
+   },
+   {
+    "type": "function",
+    "name": "webfetch"
+   }
+  ],
+  "tool_choice": "auto",
+  "stream": true
+ }
+}

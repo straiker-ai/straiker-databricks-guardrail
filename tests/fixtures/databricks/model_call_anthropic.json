@@ -1,0 +1,29 @@
+{
+ "captured": "2026-11-05 from Databricks Unity Gateway (external service policy) to a live endpoint",
+ "headers_note": "Databricks sends Content-Type, Authorization (the OAuth token) and no client headers",
+ "envelope": {
+  "event": {
+   "type": "model_call",
+   "target": "5a3d699d-3bd1-4d96-b33d-b7b12be12f36",
+   "api_type": "anthropic/v1/messages",
+   "data": {
+    "model": "workspace.straiker.coding_agents",
+    "max_tokens": 40,
+    "system": "x-anthropic-billing-header: cc_version=2.1.318; cc_entrypoint=sdk-cli;",
+    "messages": [
+     {
+      "role": "user",
+      "content": "[scrubbed 24 chars]"
+     }
+    ]
+   },
+   "trace_id": "0f016aff7e1ea95980a3e5c4e75d6472"
+  },
+  "config": {
+   "timeout_ms": "5000",
+   "phases": "pre_call,post_call",
+   "on_error": "DENY",
+   "dry_run": "false"
+  }
+ }
+}

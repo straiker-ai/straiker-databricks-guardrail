@@ -1,0 +1,59 @@
+{
+ "captured": "2026-11-05 from Databricks Unity Gateway (external service policy) to a live endpoint",
+ "headers_note": "Databricks sends Content-Type, Authorization (the OAuth token) and no client headers",
+ "envelope": {
+  "event": {
+   "type": "model_result",
+   "target": "5a3d699d-3bd1-4d96-b33d-b7b12be12f36",
+   "api_type": "anthropic/v1/messages",
+   "data": {
+    "model": "workspace.straiker.coding_agents",
+    "id": "msg_bdrk_cg467n5fk5mxmbagfgxc6cfpfc337enjix2tmv5ri3mpo7d25qzq",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+     {
+      "type": "text",
+      "text": "Hello, hope you're doing well!"
+     }
+    ],
+    "container": null,
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+     "input_tokens": 16,
+     "cache_creation_input_tokens": 0,
+     "cache_read_input_tokens": 0,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+     },
+     "output_tokens": 14,
+     "output_tokens_details": {
+      "thinking_tokens": 0
+     },
+     "service_tier": "standard"
+    }
+   },
+   "request_data": {
+    "model": "workspace.straiker.coding_agents",
+    "max_tokens": 40,
+    "system": "x-anthropic-billing-header: cc_version=2.1.318; cc_entrypoint=sdk-cli;",
+    "messages": [
+     {
+      "role": "user",
+      "content": "[scrubbed 24 chars]"
+     }
+    ]
+   },
+   "trace_id": "0f016aff7e1ea95980a3e5c4e75d6472"
+  },
+  "config": {
+   "timeout_ms": "5000",
+   "phases": "pre_call,post_call",
+   "on_error": "DENY",
+   "dry_run": "false"
+  }
+ }
+}

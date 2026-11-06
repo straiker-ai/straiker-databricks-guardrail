@@ -1,0 +1,6 @@
+# Databricks App runtime. The Straiker key comes from the app's secret resource (databricks.yml),
+# which puts the app in Databricks App mode: the Apps proxy authenticates every caller.
+command: ["uvicorn", "straiker_databricks.app:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]
+env:
+  - name: STRAIKER_API_KEY
+    valueFrom: straiker-key

@@ -1,0 +1,126 @@
+{
+ "captured": "2026-11-05 from Databricks Unity Gateway (external service policy) to a live endpoint",
+ "headers_note": "Databricks sends Content-Type, Authorization (the OAuth token) and no client headers",
+ "envelope": {
+  "event": {
+   "type": "model_call",
+   "target": "5a3d699d-3bd1-4d96-b33d-b7b12be12f36",
+   "api_type": "anthropic/v1/messages",
+   "data": {
+    "model": "workspace.straiker.coding_agents",
+    "messages": [
+     {
+      "role": "user",
+      "content": [
+       {
+        "type": "text",
+        "text": "[scrubbed 576 chars]"
+       },
+       {
+        "type": "text",
+        "text": "Use the Bash tool to run: cat notes.txt. Then reply with the file content only."
+       }
+      ]
+     },
+     {
+      "role": "system",
+      "content": [
+       {
+        "type": "text",
+        "text": "# Environment\nYou have been invoked in the following environment: \n - Primary working directory: /work\u2026[scrubbed]",
+        "cache_control": {
+         "type": "ephemeral"
+        }
+       }
+      ]
+     }
+    ],
+    "system": [
+     {
+      "type": "text",
+      "text": "x-anthropic-billing-header: cc_version=2.1.318.c86; cc_entrypoint=sdk-cli;"
+     },
+     {
+      "type": "text",
+      "text": "You are a Claude agent, built on Anthropic's Claude Agent SDK.",
+      "cache_control": {
+       "type": "ephemeral"
+      }
+     },
+     {
+      "type": "text",
+      "text": "\nYou are an agent working with the user toward their goals, using your own judgment along the way.\n\nIMPORTANT: Assist with authorized security testing, defensive security, CTF challenges, and educatio\u2026[scrubbed]",
+      "cache_control": {
+       "type": "ephemeral"
+      }
+     }
+    ],
+    "tools": [
+     {
+      "name": "Agent"
+     },
+     {
+      "name": "Bash"
+     },
+     {
+      "name": "Edit"
+     },
+     {
+      "name": "ListAgents"
+     },
+     {
+      "name": "Read"
+     },
+     {
+      "name": "ReportFindings"
+     },
+     {
+      "name": "ScheduleWakeup"
+     },
+     {
+      "name": "Skill"
+     },
+     {
+      "name": "ToolSearch"
+     },
+     {
+      "name": "Workflow"
+     },
+     {
+      "name": "DeferredToolPlaceholder"
+     },
+     {
+      "name": "Write"
+     }
+    ],
+    "metadata": {
+     "user_id": "{\"device_id\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"account_uuid\":\"\",\"session_id\":\"92a32903-7306-443d-a0cf-dc50a629dffe\"}"
+    },
+    "max_tokens": 32000,
+    "thinking": {
+     "type": "adaptive",
+     "display": "omitted"
+    },
+    "context_management": {
+     "edits": [
+      {
+       "type": "clear_thinking_20251015",
+       "keep": "all"
+      }
+     ]
+    },
+    "output_config": {
+     "effort": "high"
+    },
+    "stream": true
+   },
+   "trace_id": "3860b7af90035fa1fa985c379f7743fc"
+  },
+  "config": {
+   "timeout_ms": "5000",
+   "phases": "pre_call,post_call",
+   "on_error": "DENY",
+   "dry_run": "false"
+  }
+ }
+}
